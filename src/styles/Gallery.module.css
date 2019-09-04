@@ -1,0 +1,36 @@
+.gallery {
+    width: 500px;
+    max-width: 100%;
+}
+
+.slider_area {
+
+}
+
+.slider_image {
+    width: 100%;
+}
+
+.images_list {
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.image_block {
+    width: 20%;
+    display: inline-block;
+}
+
+.image_block img {
+    max-width: 100%;
+}
+
+::-webkit-scrollbar {
+    width:2px;
+    height:2px;
+}
+::-webkit-scrollbar-button {
+    width:2px;
+    height:2px;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from '../styles/Gallery.module.css';
 
 const Gallery = (props) => {
     const [imgSrc, setImgSrc] = useState('');
@@ -8,20 +9,16 @@ const Gallery = (props) => {
     }
 
     useEffect(() => {
-        setImgSrc(document.querySelector('.image_block img').src);
+        setImgSrc(document.querySelector('#images-list img').src);
     }, []);
 
     return (
-        <div className="gallery">
-            <div className="slider_area">
-                <img src={imgSrc} alt="" />
+        <div id="image-gallery" className={styles.gallery}>
+            <div className={styles.slider_area}>
+                <img className={styles.slider_image} src={imgSrc} alt="" />
             </div>
-            <div className="images_list">
-                {React.Children.map(props.children, (child, i) =>
-                    (
-                        <div onClick={displayImage} className="image_block">{child}</div>
-                    )
-                )}
+            <div id="images-list" className={styles.images_list}>
+                {React.Children.map(props.children, (child, i) => <div onClick={displayImage} className={styles.image_block}>{child}</div> )}
             </div>
         </div>
     )
