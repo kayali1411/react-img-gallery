@@ -18,7 +18,7 @@ const Gallery = (props) => {
                 <img className={styles.slider_image} src={imgSrc} alt="" />
             </div>
             <div id="images-list" className={styles.images_list}>
-                {React.Children.map(props.children, (child, i) => <div onClick={displayImage} className={styles.image_block}>{child}</div> )}
+                {React.Children.map(props.children, (child, i) => <div key={i} onClick={displayImage} className={styles.image_block}>{child}</div> )}
             </div>
         </div>
     )
