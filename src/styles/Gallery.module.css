@@ -13,13 +13,13 @@
 
 .images_list {
     width: 100%;
-    overflow: auto;
-    white-space: nowrap;
+    overflow: hidden;
 }
 
 .image_block {
     width: 20%;
     display: inline-block;
+    position: absolute;
 }
 
 .image_block img {
@@ -30,7 +30,8 @@
     width:2px;
     height:2px;
 }
-.images_list::-webkit-scrollbar-button {
-    width:2px;
-    height:2px;
+
+.grid_slider {
+    position: relative;
+    left: -20%;
 }

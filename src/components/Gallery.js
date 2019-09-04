@@ -3,13 +3,16 @@ import styles from '../styles/Gallery.module.css';
 
 const Gallery = (props) => {
     const [imgSrc, setImgSrc] = useState('');
+    const [thumbnailHeight, setThumbnailHeight] = useState('');
 
     const displayImage = (e) => {
         setImgSrc(e.target.src);
     }
 
     useEffect(() => {
-        setImgSrc(document.querySelector('#images-list img').src);
+        const el = document.querySelector('#images-list img');
+        setImgSrc(el.src);
+        setThumbnailHeight(el.offsetHeight);
     }, []);
 
     return (
@@ -17,8 +20,21 @@ const Gallery = (props) => {
             <div className={styles.slider_area}>
                 <img className={styles.slider_image} src={imgSrc} alt="" />
             </div>
-            <div id="images-list" className={styles.images_list}>
-                {React.Children.map(props.children, (child, i) => <div key={i} onClick={displayImage} className={styles.image_block}>{child}</div> )}
+            <div id="images-list" className={styles.images_list} style={{height: thumbnailHeight}}>
+                <div id="grid-slider" className={styles.grid_slider} style={{height: thumbnailHeight}}>
+                    {React.Children.map(props.children, (child, i) => (
+                        <div
+                            key={i}
+                            onClick={displayImage}
+                            className={styles.image_block}
+                            style={{
+                                left: (i+1)*20 + '%'
+                            }}
+                        >
+                            {child}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
