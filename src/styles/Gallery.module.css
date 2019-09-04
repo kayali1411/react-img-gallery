@@ -26,11 +26,11 @@
     max-width: 100%;
 }
 
-::-webkit-scrollbar {
+.images_list::-webkit-scrollbar {
     width:2px;
     height:2px;
 }
-::-webkit-scrollbar-button {
+.images_list::-webkit-scrollbar-button {
     width:2px;
     height:2px;
 }
