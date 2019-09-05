@@ -11,15 +11,6 @@ const CSSModuleLoader = {
 
 const styleLoader = 'style-loader';
 
-const CSSLoader = {
-    loader: 'css-loader',
-    options: {
-        modules: "global",
-        importLoaders: 2,
-        sourceMap: false, // turned off as causes delay
-    }
-}
-
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -34,7 +25,21 @@ module.exports = {
             exclude: /node_modules/
         },{
             test: /\.css$/,
-            use: [ styleLoader, CSSModuleLoader ]
+            use: [
+                'style-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: {
+                            localIdentName: "[name]__[local]___[hash:base64:5]",
+                        },
+                    }
+                }]
+        },{
+            test: /\.(pdf|jpg|png|gif|svg|ico)$/,
+            use: [{
+                    loader: 'url-loader'
+                }]
         }]
     },
     externals: {
