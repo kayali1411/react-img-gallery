@@ -7,10 +7,12 @@ const Modal = (props) => {
 
     const handelOpenModal = () => {
         setModalState('open');
+        document.getElementsByTagName('body')[0].style.overflow = 'hidden';
     }
 
     const handelCloseModal = () => {
         setModalState('closed');
+        document.getElementsByTagName('body')[0].style.overflow = '';
     }
 
     return (
