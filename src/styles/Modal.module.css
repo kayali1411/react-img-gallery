@@ -10,7 +10,6 @@
 }
 
 .img {
-    border-radius: 5px;
     max-width: 100%;
     cursor: pointer;
 }
@@ -19,7 +18,7 @@
     display: none;
     position: fixed;
     z-index: 9;
-    padding-top: 120px;
+    padding-top: 80px;
     left: 0;
     top: 0;
     width: 100%;
@@ -33,7 +32,6 @@
 }
 
 .modal_image {
-    width: 90%;
     margin: auto;
     display: block;
     -webkit-animation-name: zoom;

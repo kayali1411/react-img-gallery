@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Gallery.module.css';
+import Modal from './Modal';
 import rightArrow from '../../icons/right_arrow.png';
 import leftArrow from '../../icons/left_arrow.png';
 
@@ -9,8 +10,6 @@ const Gallery = (props) => {
     const [thumbnailLeft, setThumbnailLeft] = useState(0);
     const [thumbnailHeight, setThumbnailHeight] = useState('');
     const [currentThumbnail, setCurrentThumbnail] = useState(0);
-
-
 
     const displayImage = (e) => {
         setImgSrc(e.target.src);
@@ -35,9 +34,11 @@ const Gallery = (props) => {
 
     return (
         <div id="image-gallery" className={styles.gallery}>
-            <div className={styles.slider_area}>
-                <img className={styles.slider_image} src={imgSrc} alt="" />
-            </div>
+            {props.modal ? (<Modal imgSrc={imgSrc} enableFullScreenIcon={true} />) : (
+                <div className={styles.slider_area}>
+                    <img className={styles.slider_image} src={imgSrc} alt="" />
+                </div>
+            )}
             <div id="images-list" className={styles.images_list} style={{height: thumbnailHeight}}>
                 <div id="thumbnail-slider" className={styles.grid_slider} style={{height: thumbnailHeight}}>
                     {React.Children.map(props.children, (child, i) => (
@@ -55,13 +56,19 @@ const Gallery = (props) => {
                 </div>
                 {lastThumbnail > 0 && (
                     <div>
-                        <button className={[styles.left_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={1}><img className={styles.icon} src={leftArrow} alt="right arrow"/></button>
-                        <button className={[styles.right_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={-1}><img className={styles.icon} src={rightArrow} alt="left arrow"/></button>
+                        <button className={[styles.left_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={1}><img className={styles.icon} src={props.leftArrow} alt="left arrow"/></button>
+                        <button className={[styles.right_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={-1}><img className={styles.icon} src={props.rightArrow} alt="right arrow"/></button>
                     </div>
                 )}
             </div>
         </div>
     )
+};
+
+Gallery.defaultProps = {
+    modal: false,
+    rightArrow: rightArrow,
+    leftArrow: leftArrow
 };
 
 export default Gallery;
