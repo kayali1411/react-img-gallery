@@ -25,6 +25,7 @@ const Modal = (props) => {
                 height={props.height}
                 onClick={handelOpenModal}
             />
+            {props.enableFullScreenIcon && (<img className={styles.full_screen_icon} src={props.fullScreenIcon} alt="full screen"/>)}
 
             <div className={styles.modal} onClick={handelCloseModal} data-status={modalState}>
                 <span className={styles.close} onClick={handelCloseModal}>&times;</span>
@@ -37,7 +38,8 @@ const Modal = (props) => {
 Modal.defaultProps = {
     width: '100%',
     height: '100%',
-    fullScreenIcon: false
+    fullScreenIcon: fullScreen,
+    enableFullScreenIcon: false
 }
 
 export default Modal;

@@ -1,5 +1,17 @@
+.modal_area {
+    position: relative;
+}
+
+.full_screen_icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
 .img {
     border-radius: 5px;
+    max-width: 100%;
     cursor: pointer;
 }
 
