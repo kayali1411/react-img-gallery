@@ -14,16 +14,19 @@
 .images_list {
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .image_block {
     width: 20%;
     display: inline-block;
     position: absolute;
+    transition: all ease-out 0.3s;
 }
 
 .image_block img {
     max-width: 100%;
+    cursor: pointer;
 }
 
 .images_list::-webkit-scrollbar {
@@ -34,4 +37,41 @@
 .grid_slider {
     position: relative;
     left: -20%;
+}
+
+.button {
+    top: calc(50% - 23px);
+    margin: 0;
+    line-height: 0;
+    background-color: rgba(50, 50, 50, 0.8);
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+    transition: all ease-out 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.left_btn {
+    left: 5px;
+}
+
+.right_btn {
+    right: 5px;
+}
+
+.button .icon {
+    width: 26px;
+    height: 26px;
+    z-index: 1;
 }

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Gallery.module.css';
+import rightArrow from '../../icons/right_arrow.png';
+import leftArrow from '../../icons/left_arrow.png';
 
 const Gallery = (props) => {
     const lastThumbnail = props.children.length - 5;
@@ -15,7 +17,7 @@ const Gallery = (props) => {
     }
 
     const handelThumbnailSlider = (e) => {
-        const value     = Number(e.target.getAttribute('data-value'));
+        const value     = e.target.nodeName === 'IMG' ? e.target.parentElement.getAttribute('data-value') : e.target.getAttribute('data-value');
         const direction = value > 0 ? 'left' : 'right';
 
         if(currentThumbnail === lastThumbnail && direction === 'right') return;
@@ -51,8 +53,12 @@ const Gallery = (props) => {
                         </div>
                     ))}
                 </div>
-                <button onClick={handelThumbnailSlider} data-value={1}>Left</button>
-                <button onClick={handelThumbnailSlider} data-value={-1}>Right</button>
+                {lastThumbnail > 0 && (
+                    <div>
+                        <button className={[styles.left_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={1}><img className={styles.icon} src={leftArrow} alt="right arrow"/></button>
+                        <button className={[styles.right_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={-1}><img className={styles.icon} src={rightArrow} alt="left arrow"/></button>
+                    </div>
+                )}
             </div>
         </div>
     )
