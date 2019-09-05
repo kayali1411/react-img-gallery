@@ -50,7 +50,7 @@
     border-radius: 100%;
     position: absolute;
     cursor: pointer;
-    z-index: 999;
+    z-index: 1;
     transition: all ease-out 0.3s;
 }
 
