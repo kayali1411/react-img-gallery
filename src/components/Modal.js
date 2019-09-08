@@ -28,8 +28,10 @@ const Modal = (props) => {
             {props.enableFullScreenIcon && (<img onClick={handelOpenModal} className={styles.full_screen_icon} src={props.fullScreenIcon} alt="full screen"/>)}
 
             <div className={styles.modal} onClick={handelCloseModal} data-status={modalState}>
-                <span className={styles.close} onClick={handelCloseModal}>&times;</span>
-                <img className={styles.modal_image} src={props.imgSrc} alt={props.imgAlt} />
+                <div className={styles.modal_content}>
+                    <span className={styles.close} onClick={handelCloseModal}>&times;</span>
+                    <img className={styles.modal_image} src={props.imgSrc} alt={props.imgAlt} />
+                </div>
             </div>
         </div>
     )
