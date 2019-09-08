@@ -27,9 +27,11 @@ const Gallery = (props) => {
     };
 
     useEffect(() => {
-        const el = document.querySelector('#images-list img');
-        setImgSrc(el.src);
-        setThumbnailHeight(el.offsetHeight);
+        const images = document.querySelectorAll('#images-list img');
+        setImgSrc(images[0].src);
+        let max = 0;
+        images.forEach((img) => max = img.offsetHeight > max ? img.offsetHeight : max);
+        setThumbnailHeight(max);
     }, []);
 
     return (
