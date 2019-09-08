@@ -28,7 +28,7 @@ const Gallery = (props) => {
 
     useEffect(() => {
         const images = document.querySelectorAll('#images-list img');
-        setImgSrc(images[0].src);
+        setImgSrc(images[props.mainImg].src);
         let max = 0;
         images.forEach((img) => max = img.offsetHeight > max ? img.offsetHeight : max);
         setThumbnailHeight(max);
@@ -36,7 +36,7 @@ const Gallery = (props) => {
 
     return (
         <div id="image-gallery" className={styles.gallery}>
-            {props.modal ? (<Modal imgSrc={imgSrc} enableFullScreenIcon={true} />) : (
+            {props.modalIsEnabled ? (<Modal imgSrc={imgSrc} enableFullScreenIcon={true} />) : (
                 <div className={styles.slider_area}>
                     <img className={styles.slider_image} src={imgSrc} alt="" />
                 </div>
@@ -58,8 +58,8 @@ const Gallery = (props) => {
                 </div>
                 {lastThumbnail > 0 && (
                     <div>
-                        <button className={[styles.left_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={1}><img className={styles.icon} src={props.leftArrow} alt="left arrow"/></button>
-                        <button className={[styles.right_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={-1}><img className={styles.icon} src={props.rightArrow} alt="right arrow"/></button>
+                        <button className={[styles.left_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={1}><img className={styles.icon} src={props.thumbnailLightArrow} alt="left arrow"/></button>
+                        <button className={[styles.right_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={-1}><img className={styles.icon} src={props.thumbnailRightArrow} alt="right arrow"/></button>
                     </div>
                 )}
             </div>
@@ -68,9 +68,10 @@ const Gallery = (props) => {
 };
 
 Gallery.defaultProps = {
-    modal: false,
-    rightArrow: rightArrow,
-    leftArrow: leftArrow
+    modalIsEnabled: false,
+    mainImg: 0,
+    thumbnailRightArrow: rightArrow,
+    thumbnailLightArrow: leftArrow
 };
 
 export default Gallery;
