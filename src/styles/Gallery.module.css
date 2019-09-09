@@ -75,3 +75,18 @@
     height: 26px;
     z-index: 1;
 }
+
+@media only screen and (max-width: 768px){
+    .slider_buttons_block {
+        display: none;
+    }
+    .grid_slider {
+        position: static;
+        left: 0;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    .image_block {
+        position: relative;
+    }
+}

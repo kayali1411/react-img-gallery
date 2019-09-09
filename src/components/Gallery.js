@@ -49,7 +49,7 @@ const Gallery = (props) => {
                             onClick={displayImage}
                             className={styles.image_block}
                             style={{
-                                left: Number(((i+1)*20)+ thumbnailLeft) + '%'
+                                left: window.innerWidth > 768 ? Number(((i+1)*20)+ thumbnailLeft) + '%' : ''
                             }}
                         >
                             {child}
@@ -57,7 +57,7 @@ const Gallery = (props) => {
                     ))}
                 </div>
                 {lastThumbnail > 0 && (
-                    <div>
+                    <div className={styles.slider_buttons_block}>
                         <button className={[styles.left_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={1}><img className={styles.icon} src={props.thumbnailLightArrow} alt="left arrow"/></button>
                         <button className={[styles.right_btn, styles.button].join(' ')} onClick={handelThumbnailSlider} data-value={-1}><img className={styles.icon} src={props.thumbnailRightArrow} alt="right arrow"/></button>
                     </div>
