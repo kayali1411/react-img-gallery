@@ -1,7 +1,13 @@
 {
-  "name": "image-gallery-module",
-  "version": "1.0.0",
-  "description": "",
+  "name": "react-img-gallery",
+  "version": "0.1.0",
+  "description": "React component for building image galleries",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kayali1411/react-img-gallery.git"
+  },
+  "homepage": "https://github.com/kayali1411/react-img-gallery",
+  "bugs": "https://github.com/kayali1411/react-img-gallery/issues",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack --watch",
@@ -16,8 +22,8 @@
     "webpack": "^4.39.3"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16",
+    "react-dom": "^16"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -31,5 +37,18 @@
     "style-loader": "^1.0.0",
     "url-loader": "^2.1.0",
     "webpack-cli": "^3.3.7"
-  }
+  },
+  "tags": [
+    "react",
+    "image-gallery",
+    "react-component",
+    "modal"
+  ],
+  "keywords": [
+    "react",
+    "react component",
+    "image gallery",
+    "react gallery",
+    "modal"
+  ]
 }
