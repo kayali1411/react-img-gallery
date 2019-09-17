@@ -1,5 +1,7 @@
 .modal_area {
     position: relative;
+    padding: 1px;
+    box-sizing: border-box;
 }
 
 .full_screen_icon {

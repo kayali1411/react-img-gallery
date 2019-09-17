@@ -4,7 +4,8 @@
 }
 
 .slider_area {
-
+    padding: 1px;
+    box-sizing: border-box;
 }
 
 .slider_image {
@@ -22,6 +23,8 @@
     display: inline-block;
     position: absolute;
     transition: all ease-out 0.3s;
+    padding: 1px;
+    box-sizing: border-box;
 }
 
 .image_block img {
