@@ -9,6 +9,8 @@ React component for building image galleries
 * [Features](#features)
 * [Example](#example)
 * [Demo](#demo)
+* [Upcoming Features](#upcoming-Features)
+
 
 
 ## Installation
@@ -60,3 +62,10 @@ import { Modal } from 'react-img-gallery';
 ## Demo
 
 [Live Demo](https://react-img-gallery-k.herokuapp.com)
+
+
+## Upcoming Features
+
+* Update main area as slider to navigate between images.
+* Resizing thumbnail images.
+* Add zoom functionality.
