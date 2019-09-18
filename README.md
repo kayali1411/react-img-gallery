@@ -46,8 +46,9 @@ import { Gallery } from 'react-img-gallery';
 // modal view for main image is disabled by defaul, you can enable it by setting modalIsEnabled value to true
 // you can render custom image as main image by passing mainImg value, default main image is the first image
 // you can override thumbnail arrows images by passing arrows image soruce for thumbnailRightArrow and thumbnailLeftArrow
+// you can set custom width for gallery area by passing width as props
 
-<Gallery modalIsEnabled={true} mainImg={4}>
+<Gallery modalIsEnabled={true} mainImg={4} width={'650px'}>
     {gallery.map((imgSrc) => (<img alt="" key={imgSrc} src={imgSrc} />) )}
 </Gallery>
 
