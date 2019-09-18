@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+.modal_area img {
+    display: block;
+}
+
 .img {
     max-width: 100%;
     cursor: pointer;
