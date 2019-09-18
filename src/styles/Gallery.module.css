@@ -1,6 +1,10 @@
 .gallery {
-    width: 500px;
     max-width: 100%;
+    display: inline-block;
+}
+
+.gallery > div, .gallery > div img {
+    display: block;
 }
 
 .slider_area {

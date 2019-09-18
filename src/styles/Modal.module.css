@@ -2,6 +2,7 @@
     position: relative;
     padding: 1px;
     box-sizing: border-box;
+    display: inline-block;
 }
 
 .full_screen_icon {
@@ -9,10 +10,6 @@
     bottom: 10px;
     right: 10px;
     cursor: pointer;
-}
-
-.modal_area img {
-    display: block;
 }
 
 .img {

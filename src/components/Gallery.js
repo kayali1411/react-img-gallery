@@ -35,7 +35,7 @@ const Gallery = (props) => {
     }, []);
 
     return (
-        <div id="image-gallery" className={styles.gallery}>
+        <div id="image-gallery" className={styles.gallery} style={{width: props.width}}>
             {props.modalIsEnabled ? (<Modal imgSrc={imgSrc} enableFullScreenIcon={true} />) : (
                 <div className={styles.slider_area}>
                     <img className={styles.slider_image} src={imgSrc} alt="" />
@@ -68,6 +68,7 @@ const Gallery = (props) => {
 };
 
 Gallery.defaultProps = {
+    width: '500px',
     modalIsEnabled: false,
     mainImg: 0,
     thumbnailRightArrow: rightArrow,
